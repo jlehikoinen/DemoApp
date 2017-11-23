@@ -21,11 +21,11 @@ class ViewController: NSViewController {
         
         // 1
         // Create example command line interface commands that needs to be run chained / piped
-        // let netstatCommand = CliCommand(launchPath: "/usr/sbin/netstat", arguments: ["-na"])
-        let netstatCommand = CliCommand(launchPath: "/bin/ls", arguments: ["-la"])
+        let netstatCommand = CliCommand(launchPath: "/usr/sbin/netstat", arguments: ["-an"])
+        // let netstatCommand = CliCommand(launchPath: "/bin/ls", arguments: ["-la"])
         
-        // let grepCommand = CliCommand(launchPath: "/usr/bin/grep", arguments: ["ESTABLISHED"])
-        let grepCommand = CliCommand(launchPath: "/usr/bin/grep", arguments: ["Documents"])
+        let grepCommand = CliCommand(launchPath: "/usr/bin/grep", arguments: ["ESTABLISHED"])
+        // let grepCommand = CliCommand(launchPath: "/usr/bin/grep", arguments: ["Documents"])
         
         // Prepare cli command runner
         let chainedCommand = TaskHelper(commands: [netstatCommand, grepCommand])
@@ -49,7 +49,8 @@ class ViewController: NSViewController {
     
     func getOsVersion() {
         
-        // Command line
+        // 1
+        // Command line (sw_vers)
         var chainedCommandResult: String?
         let swversCommand = CliCommand(launchPath: "/usr/bin/sw_vers", arguments: ["-productVersion"])
         let chainedCommand = TaskHelper(commands: [swversCommand])
@@ -62,6 +63,10 @@ class ViewController: NSViewController {
             NSLog("Failed to execute command")
         }
         
+        // Print to Debug area
+        print(chainedCommandResult!)
+        
+        // 2
         // Cocoa
         let osVersion = ProcessInfo.processInfo.operatingSystemVersionString
         let osVersionPieces = ProcessInfo.processInfo.operatingSystemVersion
@@ -70,7 +75,7 @@ class ViewController: NSViewController {
         // Print to Debug area
         print(osVersionPiecesString)
         print(osVersion)
-        
+ 
         // Add info to UI label
         osLabel.stringValue = osVersion
     }
@@ -79,7 +84,7 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Get OS version when app launches
+        // Put OS version to UI label when app launches
         getOsVersion()
     }
 
