@@ -13,6 +13,7 @@
 		68873A431FC6B242005948C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68873A411FC6B242005948C5 /* Main.storyboard */; };
 		68873A4F1FC6B242005948C5 /* DemoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68873A4E1FC6B242005948C5 /* DemoAppTests.swift */; };
 		68873A5A1FC6B242005948C5 /* DemoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68873A591FC6B242005948C5 /* DemoAppUITests.swift */; };
+		68873A6A1FC6B65C005948C5 /* TaskHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68873A691FC6B65C005948C5 /* TaskHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		68873A551FC6B242005948C5 /* DemoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		68873A591FC6B242005948C5 /* DemoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoAppUITests.swift; sourceTree = "<group>"; };
 		68873A5B1FC6B242005948C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68873A691FC6B65C005948C5 /* TaskHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 		68873A3A1FC6B242005948C5 /* DemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				68873A691FC6B65C005948C5 /* TaskHelper.swift */,
 				68873A3B1FC6B242005948C5 /* AppDelegate.swift */,
 				68873A3D1FC6B242005948C5 /* ViewController.swift */,
 				68873A3F1FC6B242005948C5 /* Assets.xcassets */,
@@ -258,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				68873A3E1FC6B242005948C5 /* ViewController.swift in Sources */,
+				68873A6A1FC6B65C005948C5 /* TaskHelper.swift in Sources */,
 				68873A3C1FC6B242005948C5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
