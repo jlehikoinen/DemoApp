@@ -98,9 +98,9 @@
 		68873A3A1FC6B242005948C5 /* DemoApp */ = {
 			isa = PBXGroup;
 			children = (
-				68873A691FC6B65C005948C5 /* TaskHelper.swift */,
 				68873A3B1FC6B242005948C5 /* AppDelegate.swift */,
 				68873A3D1FC6B242005948C5 /* ViewController.swift */,
+				68873A691FC6B65C005948C5 /* TaskHelper.swift */,
 				68873A3F1FC6B242005948C5 /* Assets.xcassets */,
 				68873A411FC6B242005948C5 /* Main.storyboard */,
 				68873A441FC6B242005948C5 /* Info.plist */,

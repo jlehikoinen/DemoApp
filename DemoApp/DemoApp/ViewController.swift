@@ -15,21 +15,18 @@ class ViewController: NSViewController {
     @IBOutlet weak var osLabel: NSTextField!
     @IBOutlet var cliOutput: NSTextView!
     
+    // Do this when "Show Established Connections" button is pushed =>>>
     @IBAction func showConnectionsButtonPushed(_ sender: Any) {
         
         var chainedCommandResult: String?
         
-        // 1
         // Create example command line interface commands that needs to be run chained / piped
+        // netstat -an | grep ESTABLISHED
         let netstatCommand = CliCommand(launchPath: "/usr/sbin/netstat", arguments: ["-an"])
-        // let netstatCommand = CliCommand(launchPath: "/bin/ls", arguments: ["-la"])
-        
         let grepCommand = CliCommand(launchPath: "/usr/bin/grep", arguments: ["ESTABLISHED"])
-        // let grepCommand = CliCommand(launchPath: "/usr/bin/grep", arguments: ["Documents"])
         
         // Prepare cli command runner
         let chainedCommand = TaskHelper(commands: [netstatCommand, grepCommand])
-        // let chainedCommand = TaskHelper(commands: [netstatCommand])
         
         // Execute command
         do {
@@ -44,7 +41,6 @@ class ViewController: NSViewController {
         
         // Add result to UI
         cliOutput.string = chainedCommandResult!
-        
     }
     
     func getOsVersion() {
@@ -67,7 +63,7 @@ class ViewController: NSViewController {
         print(chainedCommandResult!)
         
         // 2
-        // Cocoa
+        // Cocoa ProcessInfo class
         let osVersion = ProcessInfo.processInfo.operatingSystemVersionString
         let osVersionPieces = ProcessInfo.processInfo.operatingSystemVersion
         let osVersionPiecesString = "\(osVersionPieces.majorVersion).\(osVersionPieces.minorVersion).\(osVersionPieces.patchVersion)"
