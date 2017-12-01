@@ -31,9 +31,8 @@ class ViewController: NSViewController {
         // Execute command
         do {
             chainedCommandResult = try chainedCommand.execute()
-        }
-        catch _ {
-            NSLog("Failed to execute command")
+        } catch _ {
+            print("Failed to execute command")
         }
         
         // Print to Debug area
@@ -54,13 +53,12 @@ class ViewController: NSViewController {
         // Execute command
         do {
             chainedCommandResult = try chainedCommand.execute()
-        }
-        catch _ {
-            NSLog("Failed to execute command")
+        } catch _ {
+            print("Failed to execute command")
         }
         
         // Print to Debug area
-        print(chainedCommandResult!)
+        print("sw_vers -productVersion: \(chainedCommandResult!)")
         
         // 2
         // Cocoa ProcessInfo class
@@ -69,8 +67,8 @@ class ViewController: NSViewController {
         let osVersionPiecesString = "\(osVersionPieces.majorVersion).\(osVersionPieces.minorVersion).\(osVersionPieces.patchVersion)"
         
         // Print to Debug area
-        print(osVersionPiecesString)
-        print(osVersion)
+        print("processInfo (short): \(osVersionPiecesString)")
+        print("processInfo (long): \(osVersion)")
  
         // Add info to UI label
         osLabel.stringValue = osVersion
