@@ -8,4 +8,4 @@ Swift Demo App for FinMacAdmin meetup 12.12.2017
 
 ## Aux files
 
-[TaskHelper.swift](https://github.com/jlehikoinen/DemoApp/blob/master/DemoApp/DemoApp/TaskHelper.swift)
+[TaskHelper.swift](https://github.com/jlehikoinen/DemoApp/blob/master/DemoApp/TaskHelper.swift)
